@@ -13,7 +13,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: SmartAirControl
+        working-directory: SmartAirControl-Services
 
     steps:
     - uses: actions/checkout@v2
