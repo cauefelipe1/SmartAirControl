@@ -3,7 +3,7 @@ using Npgsql;
 using SmartAirControl.API.Core.Settings;
 using System;
 using System.Data;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 
 namespace SmartAirControl.API.Database
 {
@@ -18,7 +18,7 @@ namespace SmartAirControl.API.Database
             switch (_appSettings.Database.DatabaseType)
             {
                 case DatabaseType.SqLite:
-                    return new SQLiteConnection(_appSettings.Database.ConnectionString);
+                    return new SqliteConnection(_appSettings.Database.ConnectionString);
                 case DatabaseType.SqlServer:
                     return new SqlConnection(_appSettings.Database.ConnectionString);
                 case DatabaseType.PostgreSQL:
