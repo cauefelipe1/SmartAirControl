@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartAirControl.API</name>
+    </assembly>
+    <members>
+        <member name="M:SmartAirControl.API.Core.Extensions.HttpExtensions.GetIdentityClaims(Microsoft.AspNetCore.Mvc.ControllerBase)">
+            <summary>
+            Returns the claims about the authenticated user who made the Http request.
+            </summary>
+        </member>
+        <member name="M:SmartAirControl.API.Core.Jwt.IJwtService.GenerateJwtToken(System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">
+            <summary>
+            Generates a <see cref="T:SmartAirControl.API.Core.Jwt.TokenInfo"/> instance containig whatever paylod passed as parameter.
+            </summary>
+            <param name="payload">Payload to be added into the JWT token.</param>
+            <returns>A <see cref="T:SmartAirControl.API.Core.Jwt.TokenInfo"/> instance</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Core.Jwt.JwtIdentityModelService.GenerateJwtToken(System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">
+            <inheritdoc cref="M:SmartAirControl.API.Core.Jwt.IJwtService.GenerateJwtToken(System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})"/>
+        </member>
+        <member name="T:SmartAirControl.API.Core.Jwt.TokenInfo">
+            <summary>
+            Defines a token information
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.API.Core.Jwt.TokenInfo.TokenType">
+            <summary>
+            String that describes the type of the token.
+            </summary>
+            <example>Bearer</example>
+        </member>
+        <member name="P:SmartAirControl.API.Core.Jwt.TokenInfo.Token">
+            <summary>
+            Encoded token.
+            </summary>
+            <example>px9qge8BMw9pgUH2fkC9kY5b84zeJf3f.pfNjhsvEMxdkKhjS3rXuyLBAXYYrej4Y.uLjrJX9xXL3xT6NpdtrxTyp5qeV9K8bG</example>
+        </member>
+        <member name="P:SmartAirControl.API.Core.Jwt.TokenInfo.ExpiresIn">
+            <summary>
+            Date and time of token expiration.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="M:SmartAirControl.API.Core.Jwt.TokenInfo.#ctor(System.String,System.String,System.DateTime)">
+            <summary>
+            Class constructor.
+            </summary>
+            <param name="tokenType"><see cref="P:SmartAirControl.API.Core.Jwt.TokenInfo.TokenType"/></param>
+            <param name="token"><see cref="P:SmartAirControl.API.Core.Jwt.TokenInfo.Token"/></param>
+            <param name="expiresIn"><see cref="P:SmartAirControl.API.Core.Jwt.TokenInfo.ExpiresIn"/></param>
+        </member>
+        <member name="T:SmartAirControl.API.Features.DeviceAlert.DeviceAlertController">
+            <summary>
+            Defines endpoints to be used in requests related to device alerts.
+            </summary>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertController.GetDeviceSensorByDateRange(System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Returns a list of device alerts.
+            </summary>
+            <param name="unviewed">When true indicates that only not viewed alerts will be returned.</param>
+            <param name="unresolved">When true indicates that only not solved alerts will be returned.</param>
+            <param name="descending">When true the list is ordered in a descending order.</param>
+            <param name="pageSize">Page size for the request.</param>
+            <param name="page">Page for the request.</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertController.MarkAlertAsViewed(System.Int32)">
+            <summary>
+            Marks an alert as viewed.
+            </summary>
+            <param name="deviceAlertId">Id of alert to be marked as viewed.</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertController.MarkAlertAsIgnored(System.Int32)">
+            <summary>
+            Marks an alert as ignored.
+            </summary>
+            <param name="deviceAlertId">Id of alert to be marked as ignored.</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertPostgreSqlRepository.GetDeviceAlertTypeResolveStatus(SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertTypeResolveStatus(SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertPostgreSqlRepository.SaveDeviceAlert(SmartAirControl.API.Features.Device.DeviceAlertDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.SaveDeviceAlert(SmartAirControl.API.Features.Device.DeviceAlertDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertPostgreSqlRepository.UpdateDeviceAlert(System.Collections.Generic.List{SmartAirControl.API.Features.Device.DeviceAlertDTO})">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.UpdateDeviceAlert(System.Collections.Generic.List{SmartAirControl.API.Features.Device.DeviceAlertDTO})"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertPostgreSqlRepository.GetDeviceAlertResolveViewStatus(SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertResolveViewStatus(SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertPostgreSqlRepository.GetDeviceAlertById(SmartAirControl.Models.Device.DeviceAlertIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertById(SmartAirControl.Models.Device.DeviceAlertIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqLiteRepository.GetDeviceAlertTypeResolveStatus(SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertTypeResolveStatus(SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqLiteRepository.SaveDeviceAlert(SmartAirControl.API.Features.Device.DeviceAlertDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.SaveDeviceAlert(SmartAirControl.API.Features.Device.DeviceAlertDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqLiteRepository.UpdateDeviceAlert(System.Collections.Generic.List{SmartAirControl.API.Features.Device.DeviceAlertDTO})">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.UpdateDeviceAlert(System.Collections.Generic.List{SmartAirControl.API.Features.Device.DeviceAlertDTO})"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqLiteRepository.GetDeviceAlertResolveViewStatus(SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertResolveViewStatus(SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqLiteRepository.GetDeviceAlertById(SmartAirControl.Models.Device.DeviceAlertIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertById(SmartAirControl.Models.Device.DeviceAlertIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqlServerRepository.GetDeviceAlertTypeResolveStatus(SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertTypeResolveStatus(SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqlServerRepository.SaveDeviceAlert(SmartAirControl.API.Features.Device.DeviceAlertDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.SaveDeviceAlert(SmartAirControl.API.Features.Device.DeviceAlertDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqlServerRepository.UpdateDeviceAlert(System.Collections.Generic.List{SmartAirControl.API.Features.Device.DeviceAlertDTO})">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.UpdateDeviceAlert(System.Collections.Generic.List{SmartAirControl.API.Features.Device.DeviceAlertDTO})"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqlServerRepository.GetDeviceAlertResolveViewStatus(SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertResolveViewStatus(SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.DeviceAlertSqlServerRepository.GetDeviceAlertById(SmartAirControl.Models.Device.DeviceAlertIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertById(SmartAirControl.Models.Device.DeviceAlertIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertById(SmartAirControl.Models.Device.DeviceAlertIdKey)">
+            <summary>
+            Gets a device alert using a <see cref="T:SmartAirControl.Models.Device.DeviceAlertIdKey"/> key.
+            </summary>
+            <param name="key">Key with the params to be used in the query.</param>
+            <returns>List of DTOs instance</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertTypeResolveStatus(SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey)">
+            <summary>
+            Gets a list of device alert using a <see cref="T:SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey"/> key.
+            </summary>
+            <param name="key">Key with the params to be used in the query.</param>
+            <returns>List of DTOs instance</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.GetDeviceAlertResolveViewStatus(SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey)">
+            <summary>
+            Gets a list of device alert using a <see cref="T:SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey"/> key.
+            </summary>
+            <param name="key">Key with the params to be used in the query.</param>
+            <returns>List of DTOs instance</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.SaveDeviceAlert(SmartAirControl.API.Features.Device.DeviceAlertDTO)">
+            <summary>
+            Saves a device health status report using a instance of <see cref="T:SmartAirControl.API.Features.Device.DeviceAlertDTO"/> key.
+            </summary>
+            <param name="dto">Info to be persisted.</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceAlert.IDeviceAlertRepository.UpdateDeviceAlert(System.Collections.Generic.List{SmartAirControl.API.Features.Device.DeviceAlertDTO})">
+            <summary>
+            Update a list of <see cref="T:SmartAirControl.API.Features.Device.DeviceAlertDTO"/> DTOs.
+            </summary>
+            <param name="dtos">List with DTOs to be persisted</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportController.RegisterReport(System.Collections.Generic.IEnumerable{SmartAirControl.Models.Device.DeviceReportInput})">
+            <summary>
+            Saves a new report into the system.
+            If the device info is not valid or not readable the system will generate an device alert.
+            </summary>
+            <param name="reportData"><see cref="T:SmartAirControl.Models.Device.DeviceReportInput"/> instance with device report info.</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportController.GetDeviceSensorByDateRange(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns a aggregated list of sensor's values for a specific device.
+            </summary>
+            <param name="deviceId">Device id to get the sensor values.</param>
+            <param name="startDate">Start date for the interval.</param>
+            <param name="endDate">End date for the interval.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportPostgreSqlRepository.GetDeviceReportTypeRegistrationIdCount(SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportTypeRegistrationIdCount(SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportPostgreSqlRepository.SaveDeviceReport(SmartAirControl.API.Features.Device.DeviceReportDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.SaveDeviceReport(SmartAirControl.API.Features.Device.DeviceReportDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportPostgreSqlRepository.GetDeviceReportSensorByDateRange(SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportSensorByDateRange(SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportSqLiteRepository.GetDeviceReportTypeRegistrationIdCount(SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportTypeRegistrationIdCount(SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportSqLiteRepository.SaveDeviceReport(SmartAirControl.API.Features.Device.DeviceReportDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.SaveDeviceReport(SmartAirControl.API.Features.Device.DeviceReportDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportSqLiteRepository.GetDeviceReportSensorByDateRange(SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportSensorByDateRange(SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportSqlServerRepository.GetDeviceReportTypeRegistrationIdCount(SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportTypeRegistrationIdCount(SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportSqlServerRepository.SaveDeviceReport(SmartAirControl.API.Features.Device.DeviceReportDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.SaveDeviceReport(SmartAirControl.API.Features.Device.DeviceReportDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.DeviceReportSqlServerRepository.GetDeviceReportSensorByDateRange(SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportSensorByDateRange(SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.SaveDeviceReport(SmartAirControl.API.Features.Device.DeviceReportDTO)">
+            <summary>
+            Saves a device report using a <see cref="T:SmartAirControl.API.Features.Device.DeviceReportDTO"/> instance.
+            </summary>
+            <param name="dto">Instance with the device health status report.</param>
+            <returns>Id generated during the process.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportTypeRegistrationIdCount(SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey)">
+            <summary>
+            Gets total of device report using a <see cref="T:SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey"/> key.
+            </summary>
+            <param name="key">Key with the params to be used in the query.</param>
+            <returns>Total count</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.DeviceReport.IDeviceReportRepository.GetDeviceReportSensorByDateRange(SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey)">
+            <summary>
+            Gets total of device report using a <see cref="T:SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey"/> key.
+            </summary>
+            <param name="key">Key with the params to be used in the query.</param>
+            <returns>Total count</returns>
+        </member>
+        <member name="T:SmartAirControl.API.Features.Device.DeviceController">
+            <summary>
+            Defines endpoints to be used in requests related to devices.
+            </summary>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceController.RegisterDevice(SmartAirControl.Models.Device.RegisterDeviceInput)">
+            <summary>
+            Register a device in the system.
+            </summary>
+            <param name="deviceInfo"><see cref="T:SmartAirControl.Models.Device.RegisterDeviceInput"/> instance with the device info.</param>
+            <returns>JWT token info to be used in the device requests.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Returns a lists of all devices.
+            </summary>
+            <param name="pageSize">Page size for the request.</param>
+            <param name="page">Page for the request.</param>
+            <returns>Pagineted list of devices.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceController.GetAllFlatView(System.Int32,System.Int32)">
+            <summary>
+            Returns a lists of all devices in a flat view.
+            </summary>
+            <param name="pageSize">Page size for the request.</param>
+            <param name="page">Page for the request.</param>
+            <returns>Pagineted list of devices flat view.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceController.GetBySerialNumber(System.String)">
+            <summary>
+            Gets a device using te serial number.
+            </summary>
+            <param name="serialNumber">Device's serial number.</param>
+            <returns>Device</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceController.GetAll(System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Returns a lists of all devices based on a start and end date range.
+            </summary>
+            <param name="startDate">Start date for the interval.</param>
+            <param name="endDate">End date for the interval.</param>
+            <param name="pageSize">Page size for the request.</param>
+            <param name="page">Page for the request.</param>
+            <returns>Pagineted list of devices.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DevicePostgreSqlRepository.GetDeviceById(SmartAirControl.Models.Device.DeviceIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceById(SmartAirControl.Models.Device.DeviceIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DevicePostgreSqlRepository.GetDeviceBySerialNumber(SmartAirControl.Models.Device.DeviceSerialNumberKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceBySerialNumber(SmartAirControl.Models.Device.DeviceSerialNumberKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DevicePostgreSqlRepository.GetLastDeviceRegistration(System.Int32)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistration(System.Int32)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DevicePostgreSqlRepository.SaveDeviceRegistration(SmartAirControl.API.Features.Device.DeviceRegistrationDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDeviceRegistration(SmartAirControl.API.Features.Device.DeviceRegistrationDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DevicePostgreSqlRepository.GetLastDeviceRegistrationId(System.Int32)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistrationId(System.Int32)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DevicePostgreSqlRepository.SaveDevice(System.Collections.Generic.IEnumerable{SmartAirControl.API.Features.Device.DeviceDTO})">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDevice(System.Collections.Generic.IEnumerable{SmartAirControl.API.Features.Device.DeviceDTO})"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DevicePostgreSqlRepository.GetAllDevice">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetAllDevice"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqLiteRepository.GetDeviceById(SmartAirControl.Models.Device.DeviceIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceById(SmartAirControl.Models.Device.DeviceIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqLiteRepository.GetDeviceBySerialNumber(SmartAirControl.Models.Device.DeviceSerialNumberKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceBySerialNumber(SmartAirControl.Models.Device.DeviceSerialNumberKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqLiteRepository.GetLastDeviceRegistration(System.Int32)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistration(System.Int32)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqLiteRepository.SaveDeviceRegistration(SmartAirControl.API.Features.Device.DeviceRegistrationDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDeviceRegistration(SmartAirControl.API.Features.Device.DeviceRegistrationDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqLiteRepository.GetLastDeviceRegistrationId(System.Int32)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistrationId(System.Int32)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqLiteRepository.SaveDevice(System.Collections.Generic.IEnumerable{SmartAirControl.API.Features.Device.DeviceDTO})">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDevice(System.Collections.Generic.IEnumerable{SmartAirControl.API.Features.Device.DeviceDTO})"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqLiteRepository.GetAllDevice">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetAllDevice"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqlServerRepository.GetDeviceById(SmartAirControl.Models.Device.DeviceIdKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceById(SmartAirControl.Models.Device.DeviceIdKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqlServerRepository.GetDeviceBySerialNumber(SmartAirControl.Models.Device.DeviceSerialNumberKey)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceBySerialNumber(SmartAirControl.Models.Device.DeviceSerialNumberKey)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqlServerRepository.GetLastDeviceRegistration(System.Int32)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistration(System.Int32)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqlServerRepository.SaveDeviceRegistration(SmartAirControl.API.Features.Device.DeviceRegistrationDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDeviceRegistration(SmartAirControl.API.Features.Device.DeviceRegistrationDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqlServerRepository.GetLastDeviceRegistrationId(System.Int32)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistrationId(System.Int32)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqlServerRepository.SaveDevice(System.Collections.Generic.IEnumerable{SmartAirControl.API.Features.Device.DeviceDTO})">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDevice(System.Collections.Generic.IEnumerable{SmartAirControl.API.Features.Device.DeviceDTO})"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.DeviceSqlServerRepository.GetAllDevice">
+            <inheritdoc cref="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetAllDevice"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceById(SmartAirControl.Models.Device.DeviceIdKey)">
+            <summary>
+            Gets a list of devices using <see cref="T:SmartAirControl.Models.Device.DeviceIdKey"/>
+            </summary>
+            <param name="key">KEy with the params.</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceBySerialNumber(SmartAirControl.Models.Device.DeviceSerialNumberKey)">
+            <summary>
+            Gets a list of devices using <see cref="T:SmartAirControl.Models.Device.DeviceSerialNumberKey"/>
+            </summary>
+            <param name="key">KEy with the params.</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetAllDevice">
+            <summary>
+            Gets a list of devices all devices.
+            </summary>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDeviceRegistration(SmartAirControl.API.Features.Device.DeviceRegistrationDTO)">
+            <summary>
+            Saves a device regitration using a <see cref="T:SmartAirControl.API.Features.Device.DeviceRegistrationDTO"/> instance.
+            </summary>
+            <param name="dto">Instance with the device register info.</param>
+            <returns>Id generated during the process.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistrationId(System.Int32)">
+            <summary>
+            Gets the id of the last registration record for for a device.
+            </summary>
+            <param name="deviceId">Device's id.</param>
+            <returns>Id of the last device registration.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetLastDeviceRegistration(System.Int32)">
+            <summary>
+            Gets the last registration record for for a device.
+            </summary>
+            <param name="deviceId">Device's id.</param>
+            <returns>Instance of the last device registration.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.GetDeviceRegistrations(System.Int32)">
+            <summary>
+            Gets all registrations of a device.
+            </summary>
+            <param name="deviceId">Device's id to fetch the registrations.</param>
+            <returns>List of device registrations.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.Device.IDeviceRepository.SaveDevice(System.Collections.Generic.IEnumerable{SmartAirControl.API.Features.Device.DeviceDTO})">
+            <summary>
+            Update a list of <see cref="T:SmartAirControl.API.Features.Device.DeviceAlertDTO"/> DTOs.
+            </summary>
+            <param name="dtos">List with DTOs to be persisted</param>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.IUserRepository.GetUser(System.String)">
+            <summary>
+            Gets a <see cref="T:SmartAirControl.API.Features.User.UserDTO"/> from the database based on the username.
+            </summary>
+            <param name="username">User's username.</param>
+            <returns>Instance of <see cref="T:SmartAirControl.API.Features.User.UserDTO"/></returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.IUserRepository.SaveUser(SmartAirControl.API.Features.User.UserDTO)">
+            <summary>
+            Saves a <see cref="T:SmartAirControl.API.Features.User.UserDTO"/> into the database.
+            </summary>
+            <param name="dto">UserDTO with the user information.</param>
+            <returns>User id generated during the insert.</returns>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.UserPostgreSqlRepository.GetUser(System.String)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.User.IUserRepository.GetUser(System.String)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.UserPostgreSqlRepository.SaveUser(SmartAirControl.API.Features.User.UserDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.User.IUserRepository.SaveUser(SmartAirControl.API.Features.User.UserDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.UserSqLiteRepository.GetUser(System.String)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.User.IUserRepository.GetUser(System.String)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.UserSqLiteRepository.SaveUser(SmartAirControl.API.Features.User.UserDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.User.IUserRepository.SaveUser(SmartAirControl.API.Features.User.UserDTO)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.UserSqlServerRepository.GetUser(System.String)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.User.IUserRepository.GetUser(System.String)"/>
+        </member>
+        <member name="M:SmartAirControl.API.Features.User.UserSqlServerRepository.SaveUser(SmartAirControl.API.Features.User.UserDTO)">
+            <inheritdoc cref="M:SmartAirControl.API.Features.User.IUserRepository.SaveUser(SmartAirControl.API.Features.User.UserDTO)"/>
+        </member>
+    </members>
+</doc>

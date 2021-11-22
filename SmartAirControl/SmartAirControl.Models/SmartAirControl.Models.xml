@@ -1,0 +1,741 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartAirControl.Models</name>
+    </assembly>
+    <members>
+        <member name="T:SmartAirControl.Models.Authentication.IdentityClaimsModel">
+            <summary>
+            Defines all possible claims that a API user can has.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Authentication.IdentityClaimsModel.UserId">
+            <summary>
+            When the authenticated user is a device it represents the Device ID.
+            Otherwise it represents the User ID.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Authentication.IdentityClaimsModel.Username">
+            <summary>
+            When the authenticated user is an user it represents the Username.
+            </summary>
+            <example>admin</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Authentication.IdentityClaimsModel.DeviceRegistrationId">
+            <summary>
+            When the authenticated user is a device it represents the current Device Registration ID.
+            Otherwise it is always 0.
+            </summary>
+            <example>5</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Authentication.IdentityClaimsModel.DeviceFirmwareVersion">
+            <summary>
+            When the authenticated user is a device it represents the current Device Firmware Version.
+            Otherwise it is always null.
+            </summary>
+            <example>ds21sdf5435524sadg5434</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Authentication.IdentityClaimsModel.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Login.LoginModel">
+            <summary>
+            Defines a user login model to be used during the login process.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Login.LoginModel.Username">
+            <summary>
+            Username for a user.
+            </summary>
+            <example>admin</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Login.LoginModel.Password">
+            <summary>
+            User's password.
+            </summary>
+            <example>123456</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Login.LoginModel.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Base.IModelKey`1">
+            <summary>
+            Identifies a class as a key of a type T.
+            </summary>
+            <typeparam name="T">Class that is marked as key.</typeparam>
+        </member>
+        <member name="T:SmartAirControl.Models.Base.PagedResponse`1">
+            <summary>
+            Defines a generic paged list response.
+            </summary>
+            <typeparam name="T">Type of the list.</typeparam>
+        </member>
+        <member name="P:SmartAirControl.Models.Base.PagedResponse`1.Page">
+            <summary>
+            Current list page.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Base.PagedResponse`1.PageSize">
+            <summary>
+            Current page size.
+            </summary>
+            <example>100</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Base.PagedResponse`1.TotalPages">
+            <summary>
+            Total of pages based on <see cref="P:SmartAirControl.Models.Base.PagedResponse`1.PageSize"/>.
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Base.PagedResponse`1.TotalRecords">
+            <summary>
+            General total of record.
+            Takes into consideration all pages.
+            </summary>
+            <example>1000</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Base.PagedResponse`1.Data">
+            <summary>
+            Page data
+            </summary>
+        </member>
+        <member name="M:SmartAirControl.Models.Base.PagedResponse`1.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceModel">
+            <summary>
+            Defines the model for device.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceModel.DeviceId">
+            <summary>
+            Device's ID inside the system.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceModel.SerialNumber">
+            <summary>
+            Device's serial number.
+            </summary>
+            <example>567s87ds32fdawe54fd54sdfsd545</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceModel.ModelName">
+            <summary>
+            Device's model name.
+            </summary>
+            <example>SmartAC_prototype</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceModel.SharedSecret">
+            <summary>
+            Device's shared secret.
+            </summary>
+            <example>33sd455fd</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceModel.Registrations">
+            <summary>
+            List of all registrations for the device.
+            </summary>
+            <example>33sd455fd</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.DeviceModel.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceWithRegistrationsFlatView">
+            <summary>
+            Defines a flat view for a device and its registrations.
+            Typically used by the UI.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceWithRegistrationsFlatView.DeviceId">
+            <summary>
+            Device's ID inside the system.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceWithRegistrationsFlatView.SerialNumber">
+            <summary>
+            Device's serial number.
+            </summary>
+            <example>567s87ds32fdawe54fd54sdfsd545</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceWithRegistrationsFlatView.ModelName">
+            <summary>
+            Device's model name.
+            </summary>
+            <example>SmartAC_prototype</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceWithRegistrationsFlatView.FirmwareVersion">
+            <summary>
+            Device's firmware version.
+            </summary>
+            <example>SmartAC_prototype</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceWithRegistrationsFlatView.RegistrationTS">
+            <summary>
+            Registration timestamp
+            </summary>
+            <example>SmartAC_prototype</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.DeviceWithRegistrationsFlatView.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAllKey">
+            <summary>
+            Key to retrieve all <see cref="T:SmartAirControl.Models.Device.DeviceModel"/> at once.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceIdKey">
+            <summary>
+            Key to search <see cref="T:SmartAirControl.Models.Device.DeviceModel"/> by its <see cref="P:SmartAirControl.Models.Device.DeviceModel.DeviceId"/>.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceIdKey.DeviceId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceModel.DeviceId"/>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceSerialNumberKey">
+            <summary>
+            Key to search <see cref="T:SmartAirControl.Models.Device.DeviceModel"/> by its <see cref="P:SmartAirControl.Models.Device.DeviceModel.SerialNumber"/>.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceSerialNumberKey.SerialNumber">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceModel.SerialNumber"/>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertType">
+            <summary>
+            Defines the possible type of device alerts.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertType.TemperatureRange">
+            <summary>
+            Temperature out of range.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertType.HumidtyRange">
+            <summary>
+            Humidity out of range.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertType.CarbonRange">
+            <summary>
+            Carbon monoxide out of range.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertType.CarbonDanger">
+            <summary>
+            Carbon monoxide in dangerous level.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertType.HealthProblem">
+            <summary>
+            Device reported a health problem.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertType.UnreadableData">
+            <summary>
+            Device send too many unreadable reports.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertViewStatus">
+            <summary>
+            Defines the possible view statuses of a device alert.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertViewStatus.New">
+            <summary>
+            Alert was created and not view yet.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertViewStatus.Viewd">
+            <summary>
+            Alert has been visualized.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertResolveStatus">
+            <summary>
+            Defines the possible resolve statuses of a device alert.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertResolveStatus.New">
+            <summary>
+            Alert was created and not view yet.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertResolveStatus.Resolved">
+            <summary>
+            Alert has been resolved.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.DeviceAlertResolveStatus.Ignored">
+            <summary>
+            Alert was ignored by the user.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertModel">
+            <summary>
+            Defines the model for a status report when retrieved from the DB.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.DeviceAlertId">
+            <summary>
+            Unique identifier for the device alert.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.DeviceId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceModel.DeviceId"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.AlertType">
+            <summary>
+            Type of the device alert.
+            <see cref="T:SmartAirControl.Models.Device.DeviceAlertType"/> for more info.
+            </summary>
+            <example>TemperatureRange</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.InitialDeviceReportId">
+            <summary>
+            <see cref="T:SmartAirControl.Models.Device.DeviceReportModel"/> that has started the alert.
+            <see cref="T:SmartAirControl.Models.Device.DeviceReportModel"/> for more info.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.LatestDeviceReportId">
+            <summary>
+            Last known <see cref="T:SmartAirControl.Models.Device.DeviceReportModel"/> which reported the alert.
+            <see cref="T:SmartAirControl.Models.Device.DeviceReportModel"/> for more info.
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.InsertTimestamp">
+            <summary>
+            Timestamp from when the alert was created.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.ResolveTimestamp">
+            <summary>
+            Timestamp from when the alert was resolved.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.VisualizationStatus">
+            <summary>
+            View status of the alert.
+            <see cref="T:SmartAirControl.Models.Device.DeviceAlertViewStatus"/> for more info.
+            </summary>
+            <example>View</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.ResolveStatus">
+            <summary>
+            Resolve status of the alert.
+            <see cref="T:SmartAirControl.Models.Device.DeviceAlertResolveStatus"/> for more info.
+            </summary>
+            <example>Ignored</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertModel.Message">
+            <summary>
+            Message which detail of the alert.
+            </summary>
+            <example>Device is reporting health problem</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.DeviceAlertModel.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertSaveInput">
+            <summary>
+            Defines the input for creating a new alert.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertSaveInput.DeviceId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceModel.DeviceId"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertSaveInput.Type">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceAlertModel.AlertType"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertSaveInput.Message">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceAlertModel.Message"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertSaveInput.StatusReportId">
+            <summary>
+            When greater than 0 indicates the status report create the alert.
+            When zero indicates that the last alert (if available) can be marked as resolved.
+            </summary>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.DeviceAlertSaveInput.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey">
+            <summary>
+            Key to search <see cref="T:SmartAirControl.Models.Device.DeviceAlertModel"/> by <see cref="P:SmartAirControl.Models.Device.DeviceAlertModel.DeviceId"/>, 
+            <see cref="P:SmartAirControl.Models.Device.DeviceAlertModel.AlertType"/> and <see cref="P:SmartAirControl.Models.Device.DeviceAlertModel.ResolveStatus"/>.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey.DeviceId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceModel.DeviceId"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey.AlertType">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceAlertModel.AlertType"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertTypeResolveStatusKey.ResolveStatus">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceAlertModel.ResolveStatus"/>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey">
+            <summary>
+            Key to search <see cref="T:SmartAirControl.Models.Device.DeviceAlertModel"/> by a list of <see cref="T:SmartAirControl.Models.Device.DeviceAlertViewStatus"/> and a list of <see cref="T:SmartAirControl.Models.Device.DeviceAlertResolveStatus"/>.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey.ViewStatus">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceAlertModel.AlertType"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertResolveViewStatusKey.ResolveStatus">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceAlertModel.ResolveStatus"/>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceAlertIdKey">
+            <summary>
+            Key to search <see cref="T:SmartAirControl.Models.Device.DeviceAlertModel"/> by a <see cref="P:SmartAirControl.Models.Device.DeviceAlertModel.DeviceAlertId"/>.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceAlertIdKey.DeviceAlertId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceAlertModel.DeviceAlertId"/>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.RegisterDeviceInput">
+            <summary>
+            Defines a register device model to be used during the registration device process.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.RegisterDeviceInput.SerialNumber">
+            <see cref="P:SmartAirControl.Models.Device.DeviceModel.SerialNumber"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.RegisterDeviceInput.SharedSecret">
+            <see cref="P:SmartAirControl.Models.Device.DeviceModel.SharedSecret"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.RegisterDeviceInput.FirmwareVersion">
+            <summary>
+            Device's firmware version.
+            </summary>
+            <example>1.0.2.9</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.RegisterDeviceInput.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceRegistrationModel">
+            <summary>
+            Defines the device registration model when retrieved from the DB.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceRegistrationModel.DeviceRegistrationId">
+            <summary>
+            Unique identifier for the device registration.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceRegistrationModel.DeviceId">
+            <summary>
+            Unique device identifier ID for the API.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceRegistrationModel.FirmwareVersion">
+            <summary>
+            Firmware reported by the device during the registration process.
+            </summary>
+            <example>1.35.2</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceRegistrationModel.RegistrationTS">
+            <summary>
+            Timestamp from when the registration occurred.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.ReportyType">
+            <summary>
+            Defines the possible device status report types.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.ReportyType.SensorReading">
+            <summary>
+            Sensor reading status report.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.ReportyType.HealthCheck">
+            <summary>
+            Health check status report.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.ReportyType.Unreadable">
+            <summary>
+            Unreadable reports.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.SensorType">
+            <summary>
+            Defines the possible device sensors reported by the device in the status report.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.SensorType.Temperature">
+            <summary>
+            Temperature sensor.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.SensorType.Humidity">
+            <summary>
+            Humidity sensor.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.Device.SensorType.CarbonMonoxide">
+            <summary>
+            Carbon monoxide sensor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceReportModel">
+            <summary>
+            Defines the model for a status report when retrieved from the DB.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.DeviceReportId">
+            <summary>
+            Unique identifier for the status report.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.DeviceId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceModel.DeviceId"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.DeviceRegistrationId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceModel.DeviceId"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.ReportType">
+            <summary>
+            Type of the report.
+            <see cref="T:SmartAirControl.Models.Device.ReportyType"/> for more info.
+            </summary>
+            <example>SensorReading</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.SensorType">
+            <summary>
+            Sensor which the device reported.
+            <see cref="T:SmartAirControl.Models.Device.SensorType"/> for more info.
+            </summary>
+            <example>Temperature</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.SensorValue">
+            <summary>
+            Sensor read value.
+            </summary>
+            <example>20.58</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.HealthStatus">
+            <summary>
+            Health status reposted by the device.
+            </summary>
+            <example>OK</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.Message">
+            <summary>
+            Message for traceability when a report is not parseable nor valid.
+            Usually a value that was not able to parse.
+            </summary>
+            <example>10.5C</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.DeviceReadTS">
+            <summary>
+            Timestamp from when the registration occurred in the device.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportModel.InsertTS">
+            <summary>
+            Timestamp from when the report was sent to the API.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.DeviceReportModel.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceReportInput">
+            <summary>
+            Defines the input that the device will send when sending a report.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportInput.ReportType">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceReportModel.ReportType"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportInput.SensorType">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceReportModel.SensorType"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportInput.SensorValue">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceReportModel.SensorValue"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportInput.SnapshotTS">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceReportModel.DeviceReadTS"/>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.DeviceReportInput.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceReportAggregated">
+            <summary>
+            Defines a aggregated version of Device reports.
+            Usually by the system UI
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.SensorType">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceReportModel.SensorType"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.StartDate">
+            <summary>
+            Start date/time of a specified aggregation date interval.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.EndDate">
+            <summary>
+            End date/time of a specified aggregation date interval.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.FirstValue">
+            <summary>
+            First sensor value of a specified aggregation date interval.
+            </summary>
+            <example>10.0</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.LastValue">
+            <summary>
+            Last sensor value of a specified aggregation date interval.
+            </summary>
+            <example>20.0</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.MinimumValue">
+            <summary>
+            Minimum sensor value of a specified aggregation date interval.
+            </summary>
+            <example>8.0</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.AverageValue">
+            <summary>
+            Average sensor value of a specified aggregation date interval.
+            </summary>
+            <example>15.7</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportAggregated.MaximumValue">
+            <summary>
+            Maximum sensor value of a specified aggregation date interval.
+            </summary>
+            <example>25.0</example>
+        </member>
+        <member name="M:SmartAirControl.Models.Device.DeviceReportAggregated.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey">
+            <summary>
+            Key to search <see cref="T:SmartAirControl.Models.Device.DeviceReportModel"/> by <see cref="P:SmartAirControl.Models.Device.DeviceRegistrationModel.DeviceRegistrationId"/> and <see cref="P:SmartAirControl.Models.Device.DeviceReportModel.ReportType"/>.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey.DeviceRegistrationId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceRegistrationModel.DeviceRegistrationId"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportTypeRegistrationIdKey.ReportType">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceReportModel.ReportType"/>
+        </member>
+        <member name="T:SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey">
+            <summary>
+            Key to search <see cref="T:SmartAirControl.Models.Device.DeviceReportModel"/> by <see cref="P:SmartAirControl.Models.Device.DeviceReportModel.DeviceId"/> and date interval.
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey.DeviceId">
+            <inheritdoc cref="P:SmartAirControl.Models.Device.DeviceReportModel.DeviceId"/>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey.StartDate">
+            <summary>
+            Start date/time of the interval.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="P:SmartAirControl.Models.Device.DeviceReportSensorByDateRangeKey.EndDate">
+            <summary>
+            Start date/time of the interval.
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="T:SmartAirControl.Models.User.UserType">
+            <summary>
+            Defines the possible types of user.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.User.UserType.Admin">
+            <summary>
+            Administrator users.
+            </summary>
+        </member>
+        <member name="F:SmartAirControl.Models.User.UserType.User">
+            <summary>
+            Non-administrator users.
+            </summary>
+        </member>
+        <member name="T:SmartAirControl.Models.User.UserModel">
+            <summary>
+            Defines a model that represents a User Of the system
+            </summary>
+        </member>
+        <member name="P:SmartAirControl.Models.User.UserModel.UserId">
+            <summary>
+            User's ID. This is the user unique identifier for the API.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:SmartAirControl.Models.User.UserModel.Username">
+            <summary>
+            User's username. This is the user unique identifier for the biz.
+            </summary>
+            <example>admin</example>
+        </member>
+        <member name="P:SmartAirControl.Models.User.UserModel.Password">
+            <summary>
+            User's password.
+            Only used to create a new user. When retrieving the user from the DB it will be masked.
+            </summary>
+            <example>*****</example>
+        </member>
+        <member name="P:SmartAirControl.Models.User.UserModel.Type">
+            <summary>
+            User's type.
+            <see cref="T:SmartAirControl.Models.User.UserType"/> for more info.
+            </summary>
+            <example>Admin</example>
+        </member>
+        <member name="P:SmartAirControl.Models.User.UserModel.InsertTimestamp">
+            <summary>
+            Timestamp from when the user was created
+            </summary>
+            <example>2021-10-02T12:47:49.134Z</example>
+        </member>
+        <member name="M:SmartAirControl.Models.User.UserModel.#ctor">
+            <summary>
+            Class constructor
+            </summary>
+        </member>
+    </members>
+</doc>
