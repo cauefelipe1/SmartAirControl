@@ -36,7 +36,7 @@ namespace SmartAirControl.API.Features.Device
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var token = await _mediator.Send(new DeviceReportMediator.DeviceRegistrationRequest(deviceInfo));
+            var token = await _mediator.Send(new DeviceMediator.DeviceRegistrationRequest(deviceInfo));
 
             return Ok(token);
         }

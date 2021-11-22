@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SmartAirControl.API.Features.Device
 {
-    public partial class DeviceReportMediator
+    public partial class DeviceMediator
     {
         public class DeviceRegistrationRequest : IRequest<TokenInfo>
         {
@@ -41,13 +41,13 @@ namespace SmartAirControl.API.Features.Device
                 ValidateModel(request.Model);
 
                 var deviceKey = new DeviceSerialNumberKey { SerialNumber = request.Model.SerialNumber };
-                var deviceModels = await _mediator.Send(new DeviceMediator.DeviceQueryRequest(deviceKey));
+                var deviceModels = await _mediator.Send(new DeviceQueryRequest(deviceKey));
                 var deviceModel = deviceModels?.FirstOrDefault();
 
                 if (deviceModel is null)
                 {
                     deviceModel = BuildDeviceModel(request.Model);
-                    var deviceIds = await _mediator.Send(new DeviceMediator.DeviceSaveRequest(new[] { deviceModel }));
+                    var deviceIds = await _mediator.Send(new DeviceSaveRequest(new[] { deviceModel }));
 
                     deviceModel.DeviceId = deviceIds.FirstOrDefault();
                 }
